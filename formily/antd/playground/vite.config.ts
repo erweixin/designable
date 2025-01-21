@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react-swc'
 import { GlobSync } from 'glob'
 import { resolve } from 'path'
 import fs from 'fs-extra'
-import basicSsl from '@vitejs/plugin-basic-ssl'
 
 const getWorkspaceAlias = () => {
   const basePath = resolve(__dirname, '../../../')
@@ -30,7 +29,7 @@ const getWorkspaceAlias = () => {
 // https://vitejs.dev/config/
 export default defineConfig({
   root: '.',
-  plugins: [react(), basicSsl()],
+  plugins: [react()],
   resolve: {
     alias: [
       { find: /^~/, replacement: '' },
